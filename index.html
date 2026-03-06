@@ -3,127 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Técnico em Informática para Internet | IFPR Telêmaco Borba</title>
+    <title>Informática para Internet | IFPR TB</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto+Mono:wght@300;400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo-area">
-                <img src="logo.png" alt="Logo IFPR TB Informática" class="academy-logo">
-                <div class="titles">
-                    <h1>TÉCNICO EM INFORMÁTICA</h1>
-                    <h2>PARA INTERNET</h2>
-                    <p class="campus-sub">IFPR | Campus Telêmaco Borba</p>
+    <div id="barra-gov">
+        <div class="container">
+            <span>Brasil</span>
+            <nav>
+                <a href="#">Acesso à informação</a>
+                <a href="#">Participe</a>
+                <a href="#">Legislação</a>
+                <a href="#">Canais</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="header-if">
+        <div class="container header-main">
+            <div class="brand">
+                <img src="logo.png" alt="Logo Orca" class="logo-if">
+                <div class="brand-text">
+                    <span class="inst">Instituto Federal do Paraná</span>
+                    <span class="campus">Campus Telêmaco Borba</span>
                 </div>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#curriculo">Currículo</a></li>
-                    <li><a href="#ingresso">Ingresso</a></li>
-                    <li><a href="#contato" class="btn-cta">Inscreva-se</a></li>
-                </ul>
-            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar no curso...">
+                <button>🔍</button>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text-glitch" data-text="01011010_INNOVATIO">01011010_INNOVATIO</div>
-            <h1 class="hero-title">Molde o Futuro da Web.</h1>
-            <p class="hero-subtitle">Um programa de excelência técnica e científica no coração do Paraná.</p>
-            <div class="hero-actions">
-                <a href="#sobre" class="btn-primary">Descubra o Curso</a>
-                <a href="https://telemaco.ifpr.edu.br/" target="_blank" class="btn-secondary">Portal IFPR TB</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="about-section">
-        <div class="container grid-2-1">
-            <div class="about-text">
-                <h3 class="motto-text">INNOVATIO • SCIENTIA • TECHNOLOGIA</h3>
-                <h2>Excelência em Desenvolvimento Web</h2>
-                <p>O Curso Técnico em Informática para Internet do IFPR Campus Telêmaco Borba forma profissionais capacitados a projetar, desenvolver e gerenciar sistemas web complexos. Unimos a base teórica rigorosa à prática exigida pelo mercado tecnológico.</p>
-                <p>Nossos alunos aprendem a criar não apenas sites, mas soluções de software robustas, focadas em usabilidade, segurança e escalabilidade.</p>
-            </div>
-            <div class="about-stats-card">
-                <div class="stat-item">
-                    <span class="stat-number">2+</span>
-                    <span class="stat-desc">Anos de Duração</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">Web/Mobile</span>
-                    <span class="stat-desc">Foco Técnico</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">Gratuito</span>
-                    <span class="stat-desc">Ensino Público</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="curriculo" class="curriculum-section">
+    <nav class="nav-principal">
         <div class="container">
-            <h2 class="section-title center">Matriz Curricular em Destaque</h2>
-            <div class="syllabus-grid">
-                <div class="syllabus-item">
-                    <h4>Fundamentos</h4>
-                    <p>Lógica de Programação, Algoritmos, Arquitetura de Computadores.</p>
+            <ul>
+                <li><a href="#">O Curso</a></li>
+                <li><a href="#">Docentes</a></li>
+                <li><a href="#">Projetos</a></li>
+                <li><a href="#">Documentos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container main-layout">
+        <aside class="sidebar-left">
+            <section class="menu-acesso">
+                <h3>Acesso Rápido</h3>
+                <ul>
+                    <li><a href="#">Moodle</a></li>
+                    <li><a href="#">SIGAA</a></li>
+                    <li><a href="#">Calendário Acadêmico</a></li>
+                    <li><a href="#">Horários de Aula</a></li>
+                    <li><a href="#">Biblioteca</a></li>
+                </ul>
+            </section>
+            
+            <section class="tags">
+                <h3>Assuntos</h3>
+                <div class="tag-cloud">
+                    <span>Python</span> <span>HTML/CSS</span> <span>Hardware</span> <span>Redes</span>
                 </div>
-                <div class="syllabus-item">
-                    <h4>Frontend Avançado</h4>
-                    <p>HTML5 Profissional, CSS Moderno (Grid/Flexbox), JavaScript ES6+.</p>
-                </div>
-                <div class="syllabus-item active-tech">
-                    <h4>Backend & Dados</h4>
-                    <p>Linguagens de Servidor, Banco de Dados SQL/NoSQL, APIs RESTful.</p>
-                </div>
-                <div class="syllabus-item">
-                    <h4>DevOps & Qualidade</h4>
-                    <p>Git, Versionamento, Testes Automatizados, Deploy em Nuvem.</p>
+            </section>
+        </aside>
+
+        <article class="content-center">
+            <nav class="breadcrumb">Você está aqui: Home > Informática para Internet</nav>
+            
+            <h1 class="page-title">Técnico em Informática para Internet</h1>
+            
+            <div class="featured-image">
+                <div class="image-placeholder">
+                    <span>INNOVATIO • SCIENTIA • TECHNOLOGIA</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="ingresso" class="admission-section">
-        <div class="container admission-box">
-            <h2>Processo de Ingresso</h2>
-            <p>Faça parte da próxima turma. Verifique os editais atuais para o Processo Seletivo IFPR.</p>
-            <a href="https://telemaco.ifpr.edu.br/ingresso/" target="_blank" class="btn-admission">Ver Editais Abertos</a>
-        </div>
-    </section>
-
-    <footer id="contato" class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-logo-block">
-                <img src="logo.png" alt="Logo IFPR TB Informática" class="footer-logo">
-                <p>Técnico em Informática para Internet</p>
+            <div class="text-body">
+                <h2>Sobre o curso</h2>
+                <p>O curso técnico em Informática para Internet integrado ao ensino médio prepara o estudante para desenvolver sistemas computacionais utilizando ambientes de desenvolvimento de sistemas, sistemas operacionais e bancos de dados.</p>
+                
+                <div class="news-grid">
+                    <div class="news-item">
+                        <span class="date">05/03/2026</span>
+                        <h4>Inscrições abertas para o Processo Seletivo</h4>
+                    </div>
+                    <div class="news-item">
+                        <span class="date">01/03/2026</span>
+                        <h4>Projeto 'Orca Code' inicia mentorias para calouros</h4>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Contato</h4>
-                <p>Rod. PR 160, s/n - Jardim Bandeirantes</p>
-                <p>Telêmaco Borba - PR</p>
-                <p>Email: secretaria.tb@ifpr.edu.br</p>
+        </article>
+    </main>
+
+    <footer class="footer-if">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <strong>IFPR - Campus Telêmaco Borba</strong>
+                <p>Rodovia PR 160, KM 17,5 - Jardim Bandeirantes</p>
             </div>
             <div class="footer-social">
-                <h4>Siga-nos</h4>
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
+                <p>Redes Sociais</p>
+                <div class="icons"> [FB] [IG] [YT] </div>
             </div>
-        </div>
-        <div class="footer-bottom center">
-            <p>&copy; 2023-2024 IFPR Telêmaco Borba. Inspirado na excelência académica.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
