@@ -1,0 +1,345 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fcfcfc; /* Fundo muito claro para contraste */
+}
+
+/* --- VARIÁVEIS DE COR DA SUA ID VISUAL --- */
+:root {
+    --ifpr-orca-escuro: #1a1c1d; /* Cinza-preto predominante do logo */
+    --ifpr-orca-claro: #dbdbdb;  /* Cinza-claro da orca e da faixa */
+    --ifpr-orca-medio: #3e4143;  /* Cinza para bordas e hover */
+    --bg-white: #ffffff;
+    --text-on-dark: #f0f0f0;
+}
+
+/* --- CABEÇALHO (HEADER) - ESTILO HARVARD COM CORES IFPR --- */
+header {
+    background-color: var(--bg-white);
+    border-bottom: 2px solid var(--ifpr-orca-medio);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.orca-logo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--ifpr-orca-escuro);
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.orca-logo-placeholder span {
+    font-size: 0.3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.campus-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--ifpr-orca-escuro);
+    letter-spacing: 1px;
+}
+
+.sub-title {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--ifpr-orca-medio);
+    font-weight: 600;
+}
+
+/* NAVEGAÇÃO */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--ifpr-orca-medio);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a i {
+    font-size: 1.1em;
+}
+
+.nav-links a:hover {
+    color: var(--ifpr-orca-escuro);
+    border-bottom: 2px solid var(--ifpr-orca-escuro);
+    padding-bottom: 3px;
+}
+
+/* MENU MOBILE */
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: var(--ifpr-orca-medio);
+    cursor: pointer;
+}
+
+/* COMPENSAÇÃO DO HEADER FIXO */
+body {
+    padding-top: 80px;
+}
+
+/* --- BANNER PRINCIPAL (HERO) --- */
+.hero-banner {
+    background-color: var(--ifpr-orca-escuro); /* Preto da ID visual */
+    background-image: linear-gradient(135deg, var(--ifpr-orca-escuro) 0%, #2c2f31 100%);
+    color: var(--text-on-dark);
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: var(--ifpr-orca-claro);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--ifpr-orca-claro);
+    color: var(--ifpr-orca-claro);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--ifpr-orca-claro);
+    color: var(--ifpr-orca-escuro);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* OVERVIEW & SELO VISUAL */
+.overview h2 {
+    font-size: 1.8em;
+    color: var(--ifpr-orca-escuro);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--ifpr-orca-medio);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.text-and-badge {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.visual-identity-badge {
+    text-align: center;
+    border: 2px solid var(--ifpr-orca-claro);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.visual-badge-img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%) brightness(1.2); /* Integrando a orca */
+}
+
+.badge-sub-text {
+    font-size: 0.7em;
+    margin-top: 10px;
+    color: var(--ifpr-orca-medio);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- AT A GLANCE (DE RELANCE) - GRID --- */
+.at-a-glance h2 {
+    color: var(--ifpr-orca-escuro);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.glance-item {
+    background-color: var(--ifpr-orca-claro); /* Cinza claro da orca */
+    color: var(--ifpr-orca-escuro);
+    padding: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.glance-item i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.glance-item h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.glance-item p {
+    font-size: 0.85em;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer {
+    background-color: var(--ifpr-orca-medio); /* Cinza escuro */
+    color: var(--text-on-dark);
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-left i {
+    font-size: 1.5em;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.tagline {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--ifpr-orca-claro);
+    margin-top: 3px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: var(--ifpr-orca-claro);
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+@media (max-width: 900px) {
+    .glance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Esconde o menu normal */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão hambúrguer */
+    }
+    
+    .logo-section .sub-title {
+        display: none; /* Simplifica o logo */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .content-wrapper {
+        gap: 30px;
+    }
+
+    .text-and-badge {
+        flex-direction: column;
+        text-align: center;
+    }
+}
