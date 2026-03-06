@@ -1,58 +1,103 @@
-/* script.js */
+/**
+ * Script Interativo - Portal Informática IFPR TB & Loja da Formatura
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Efeito de Scroll no Header
-    const header = document.querySelector('.main-header');
+    /* --- 1. EFEITO MÁQUINA DE ESCREVER (HERO) --- */
+    const textArray = ["Código Seguro.", "Interfaces Únicas.", "Aplicações Escaláveis.", "Dinheiro pra Formatura!"];
+    const typingElement = document.getElementById("typing");
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const currentText = textArray[textIndex];
+        
+        if (isDeleting) {
+            typingElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentText.length) {
+            typeSpeed = 2000; // Pausa no final da palavra
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % textArray.length;
+            typeSpeed = 500; // Pausa antes de começar a nova palavra
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+    }
     
+    // Inicia o efeito
+    setTimeout(typeEffect, 1000);
+
+
+    /* --- 2. SCROLL REVEAL (ANIMAÇÃO AO DESCER A PÁGINA) --- */
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target); // Para animar apenas uma vez
+            }
+        });
+    }, {
+        threshold: 0.1, // Dispara quando 10% do elemento está visível
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    // Estado inicial dos elementos a serem revelados
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.5, 0, 0, 1)';
+        revealObserver.observe(el);
+    });
+
+
+    /* --- 3. EFEITO NAVBAR NO SCROLL --- */
+    const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.padding = "10px 0";
-            header.style.backgroundColor = "rgba(7, 7, 7, 0.98)";
-            header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.5)";
+            navbar.style.background = 'rgba(3, 3, 3, 0.95)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
         } else {
-            header.style.padding = "20px 0";
-            header.style.backgroundColor = "rgba(7, 7, 7, 0.95)";
-            header.style.boxShadow = "none";
+            navbar.style.background = 'rgba(3, 3, 3, 0.7)';
+            navbar.style.boxShadow = 'none';
         }
-    });
-
-    // 2. Efeito Sutil de Código Binário no Hero
-    const glitchText = document.querySelector('.hero-text-glitch');
-    const originalText = glitchText.getAttribute('data-text');
-    const binary = "01011010";
-    const latin = "INNOVATIO";
-
-    let state = 0; // 0: Completo, 1: Apenas Binário, 2: Apenas Latim
-
-    function cycleText() {
-        if (state === 0) {
-            glitchText.textContent = `${binary}_****`;
-            state = 1;
-        } else if (state === 1) {
-            glitchText.textContent = `****_${latin}`;
-            state = 2;
-        } else {
-            glitchText.textContent = originalText;
-            state = 0;
-        }
-    }
-
-    // Muda o texto a cada 3 segundos de forma sutil
-    setInterval(cycleText, 3000);
-
-    // 3. Smooth Scroll (Navegação suave para âncoras)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return; // Ignora links vazios
-
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
     });
 });
+
+/* --- 4. LÓGICA DO CARRINHO DE COMPRAS (SIMULAÇÃO) --- */
+let cartCount = 0;
+
+function addToCart() {
+    const counterElement = document.querySelector('.cart-count');
+    const cartBtn = document.getElementById('cartBtn');
+    
+    cartCount++;
+    counterElement.textContent = cartCount;
+
+    // Animação de "pulo" no botão do carrinho
+    cartBtn.style.transform = 'scale(1.2)';
+    cartBtn.style.borderColor = '#ffffff';
+    
+    setTimeout(() => {
+        cartBtn.style.transform = 'scale(1)';
+        cartBtn.style.borderColor = 'var(--border-color)';
+    }, 200);
+
+    // Feedback visual opcional
+    console.log(`Produto adicionado! Total de itens: ${cartCount}`);
+}

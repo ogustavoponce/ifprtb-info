@@ -4,113 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informática para Internet | IFPR TB</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="barra-gov">
-        <div class="container">
-            <span>Brasil</span>
-            <nav>
-                <a href="#">Acesso à informação</a>
-                <a href="#">Participe</a>
-                <a href="#">Legislação</a>
-                <a href="#">Canais</a>
-            </nav>
-        </div>
-    </div>
+    <div class="cyber-grid-bg"></div>
 
-    <header class="header-if">
-        <div class="container header-main">
-            <div class="brand">
-                <img src="logo.png" alt="Logo Orca" class="logo-if">
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand">
+                <img src="logo.png" alt="Logo Orca" class="brand-logo">
                 <div class="brand-text">
-                    <span class="inst">Instituto Federal do Paraná</span>
-                    <span class="campus">Campus Telêmaco Borba</span>
+                    <span class="title">InfoWeb</span>
+                    <span class="subtitle">IFPR Telêmaco Borba</span>
                 </div>
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="Buscar no curso...">
-                <button>🔍</button>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#sobre">O Curso</a>
+                <a href="#grade">Grade</a>
+                <a href="#devlog">DevLog</a>
+                <a href="#loja" class="loja-link"><i class="ph ph-storefront"></i> Loja da Turma</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <nav class="nav-principal">
-        <div class="container">
-            <ul>
-                <li><a href="#">O Curso</a></li>
-                <li><a href="#">Docentes</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Documentos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="tech-badge"><i class="ph ph-code"></i> Turma 2026-2028</div>
+                <h1 class="hero-title">
+                    Transformando Café em <br>
+                    <span class="typing-text" id="typing"></span><span class="cursor">|</span>
+                </h1>
+                <p class="hero-description">
+                    Bem-vindo ao portal oficial dos alunos de Informática para Internet do IFPR Campus Telêmaco Borba. 
+                    Aqui nós codamos o futuro, compartilhamos conhecimento e construímos nossa formatura.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#loja" class="btn btn-primary"><i class="ph ph-shopping-bag"></i> Apoie nossa Formatura</a>
+                    <a href="#sobre" class="btn btn-secondary">Conheça o Curso</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hologram-container">
+                    <img src="logo.png" alt="Orca Hologram" class="orca-hologram">
+                    <div class="glow-ring"></div>
+                </div>
+            </div>
         </div>
-    </nav>
+    </section>
 
-    <main class="container main-layout">
-        <aside class="sidebar-left">
-            <section class="menu-acesso">
-                <h3>Acesso Rápido</h3>
-                <ul>
-                    <li><a href="#">Moodle</a></li>
-                    <li><a href="#">SIGAA</a></li>
-                    <li><a href="#">Calendário Acadêmico</a></li>
-                    <li><a href="#">Horários de Aula</a></li>
-                    <li><a href="#">Biblioteca</a></li>
-                </ul>
-            </section>
+    <section class="section" id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Arte da <span class="highlight">Engenharia Web</span></h2>
+                <p>O que realmente fazemos no Ensino Médio Integrado do IFPR?</p>
+            </div>
             
-            <section class="tags">
-                <h3>Assuntos</h3>
-                <div class="tag-cloud">
-                    <span>Python</span> <span>HTML/CSS</span> <span>Hardware</span> <span>Redes</span>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <i class="ph ph-browsers icon-large"></i>
+                    <h3>Front-end Domination</h3>
+                    <p>Criação de interfaces responsivas e dinâmicas com HTML5, CSS3, JavaScript e frameworks modernos focados em Experiência do Usuário (UX).</p>
                 </div>
-            </section>
-        </aside>
+                <div class="feature-card reveal">
+                    <i class="ph ph-database icon-large"></i>
+                    <h3>Back-end & Dados</h3>
+                    <p>A lógica por trás dos panos. Desenvolvimento de APIs, lógica de programação robusta e modelagem de bancos de dados relacionais e NoSQL.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <i class="ph ph-device-mobile icon-large"></i>
+                    <h3>Mobile First</h3>
+                    <p>Desenvolvimento focado em dispositivos móveis, garantindo que nossas aplicações rodem perfeitamente em qualquer tela do planeta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <article class="content-center">
-            <nav class="breadcrumb">Você está aqui: Home > Informática para Internet</nav>
-            
-            <h1 class="page-title">Técnico em Informática para Internet</h1>
-            
-            <div class="featured-image">
-                <div class="image-placeholder">
-                    <span>INNOVATIO • SCIENTIA • TECHNOLOGIA</span>
+    <section class="section store-section" id="loja">
+        <div class="container">
+            <div class="store-header reveal">
+                <div class="store-title-area">
+                    <h2>Loja da <span class="highlight">Formatura</span></h2>
+                    <p>Todo o lucro é destinado à formatura da nossa turma. Vista a camisa do curso e apoie os futuros devs do Brasil!</p>
+                </div>
+                <div class="store-progress">
+                    <span>Meta da Formatura</span>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 15%;"></div></div>
+                    <span class="progress-text">15% alcançado</span>
                 </div>
             </div>
 
-            <div class="text-body">
-                <h2>Sobre o curso</h2>
-                <p>O curso técnico em Informática para Internet integrado ao ensino médio prepara o estudante para desenvolver sistemas computacionais utilizando ambientes de desenvolvimento de sistemas, sistemas operacionais e bancos de dados.</p>
-                
-                <div class="news-grid">
-                    <div class="news-item">
-                        <span class="date">05/03/2026</span>
-                        <h4>Inscrições abertas para o Processo Seletivo</h4>
+            <div class="products-grid">
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="img-placeholder"><i class="ph ph-t-shirt"></i></div>
+                        <span class="tag">Mais Vendido</span>
                     </div>
-                    <div class="news-item">
-                        <span class="date">01/03/2026</span>
-                        <h4>Projeto 'Orca Code' inicia mentorias para calouros</h4>
+                    <div class="product-info">
+                        <h3>Camiseta Oficial Orca Code</h3>
+                        <p class="price">R$ 55,00</p>
+                        <button class="btn btn-add-cart" onclick="addToCart()">Adicionar <i class="ph ph-shopping-cart-simple"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="img-placeholder"><i class="ph ph-coffee"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Caneca "No Code No Life"</h3>
+                        <p class="price">R$ 35,00</p>
+                        <button class="btn btn-add-cart" onclick="addToCart()">Adicionar <i class="ph ph-shopping-cart-simple"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="img-placeholder"><i class="ph ph-sticker"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pack Adesivos Tech (Notebook)</h3>
+                        <p class="price">R$ 15,00</p>
+                        <button class="btn btn-add-cart" onclick="addToCart()">Adicionar <i class="ph ph-shopping-cart-simple"></i></button>
                     </div>
                 </div>
             </div>
-        </article>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer-if">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <strong>IFPR - Campus Telêmaco Borba</strong>
-                <p>Rodovia PR 160, KM 17,5 - Jardim Bandeirantes</p>
+    <section class="section" id="devlog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dev<span class="highlight">Log</span></h2>
+                <p>Nossos aprendizados, tutoriais e vida no IFPR.</p>
+            </div>
+
+            <div class="blog-layout">
+                <article class="blog-post reveal">
+                    <div class="post-meta">
+                        <span class="date">06 Mar, 2026</span>
+                        <span class="category">Tutorial</span>
+                    </div>
+                    <h3><a href="#">Como centralizar uma div (A batalha final)</a></h3>
+                    <p>Flexbox ou Grid? Desvendamos os mistérios do CSS que todo aluno de Informática precisa saber logo no primeiro ano.</p>
+                    <a href="#" class="read-more">Ler Artigo <i class="ph ph-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-post reveal">
+                    <div class="post-meta">
+                        <span class="date">28 Fev, 2026</span>
+                        <span class="category">Projeto</span>
+                    </div>
+                    <h3><a href="#">Lançamento da Lojinha da Formatura</a></h3>
+                    <p>Como desenvolvemos esta plataforma em HTML, CSS e JS puro para arrecadar fundos para nossa viagem e colação.</p>
+                    <a href="#" class="read-more">Ler Artigo <i class="ph ph-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Logo Info IFPR" class="footer-logo">
+                <p>Innovatio • Scientia • Technologia</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <a href="#sobre">Sobre o Curso</a>
+                <a href="#loja">Loja Virtual</a>
+                <a href="#devlog">Artigos</a>
             </div>
             <div class="footer-social">
-                <p>Redes Sociais</p>
-                <div class="icons"> [FB] [IG] [YT] </div>
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-github-logo"></i></a>
+                    <a href="#"><i class="ph ph-discord-logo"></i></a>
+                </div>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Turma de Informática para Internet. Desenvolvido com 🤍 e muito código no IFPR Telêmaco Borba.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
