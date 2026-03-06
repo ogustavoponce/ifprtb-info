@@ -1,40 +1,58 @@
-// Aguarda o carregamento do DOM para rodar o script
+/* script.js */
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Efeito de Scroll no Header
+    const header = document.querySelector('.main-header');
     
-    // Seleciona o botão de menu e a lista de links
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    // Seletor para os links dentro do menu (para fechá-lo após um clique)
-    const links = document.querySelectorAll('.nav-links a');
-
-    // Função para abrir/fechar o menu
-    const toggleMenu = () => {
-        navLinks.classList.toggle('active');
-        
-        // Altera o ícone do botão
-        const icon = menuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times'); // Muda para X
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.padding = "10px 0";
+            header.style.backgroundColor = "rgba(7, 7, 7, 0.98)";
+            header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.5)";
         } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars'); // Volta para Hambúrguer
+            header.style.padding = "20px 0";
+            header.style.backgroundColor = "rgba(7, 7, 7, 0.95)";
+            header.style.boxShadow = "none";
         }
-    };
+    });
 
-    // Adiciona evento de clique ao botão
-    menuToggle.addEventListener('click', toggleMenu);
+    // 2. Efeito Sutil de Código Binário no Hero
+    const glitchText = document.querySelector('.hero-text-glitch');
+    const originalText = glitchText.getAttribute('data-text');
+    const binary = "01011010";
+    const latin = "INNOVATIO";
 
-    // Fecha o menu se um link for clicado (útil para navegação "one-page")
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                toggleMenu(); // Fecha o menu
-            }
+    let state = 0; // 0: Completo, 1: Apenas Binário, 2: Apenas Latim
+
+    function cycleText() {
+        if (state === 0) {
+            glitchText.textContent = `${binary}_****`;
+            state = 1;
+        } else if (state === 1) {
+            glitchText.textContent = `****_${latin}`;
+            state = 2;
+        } else {
+            glitchText.textContent = originalText;
+            state = 0;
+        }
+    }
+
+    // Muda o texto a cada 3 segundos de forma sutil
+    setInterval(cycleText, 3000);
+
+    // 3. Smooth Scroll (Navegação suave para âncoras)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return; // Ignora links vazios
+
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     });
-    
-    // Mostra uma mensagem de confirmação para testar se o JS está funcionando
-    console.log("Script IFPR carregado com sucesso!");
 });
